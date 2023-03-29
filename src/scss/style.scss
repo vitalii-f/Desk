@@ -1,0 +1,181 @@
+//colors variables start
+$color-white: #FFF;
+$color-grey-3: #828282;
+$color-neutral-01: #626687;
+$color-neutral-100: #F0F3FD;
+$color-neutral-300: #E0E3EB;
+$color-neutral-500: #888B97;
+$color-neutral-700: #3C4563;
+$color-neutral-900: #0E1735;
+$color-headline: #1B1C57;
+$color-subheadline: #68799F;
+$color-yellow-500: #F59E0B;
+$color-orange: #F2994A;
+$color-green-100: #D1FAE5;
+$color-green-700: #047857;
+$color-red-100: #FEE2E2;
+$color-red-500: #EF4444;
+$color-blue-100: #DBEAFE;
+$color-blue-500: #3B82F6;
+$color-blue-700: #1D4ED8;
+//colors variables end
+
+//default variables start
+$default-content-width: 1200px;
+//default variables end
+
+//fonts start
+@font-face {
+    font-family: "Rubik";
+    src: url("../fonts/Rubik/Rubik-VariableFont_wght.ttf") format("truetype supports variations"),
+         url("../fonts/Rubik/Rubik-VariableFont_wght.ttf") format("truetype-variations");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Mulish";
+    src: url("../fonts/Mulish/Mulish-VariableFont_wght.ttf") format("truetype support variations"),
+         url("../fonts/Mulish/Mulish-VariableFont_wght.ttf") format("truetype-variations");
+}
+@font-face {
+    font-family: "Lexend";
+    src: url("../fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype support variations"),
+         url("../fonts/Lexend/Lexend-VariableFont_wght.ttf") format("truetype-variations");
+}
+//fonts end
+
+%wrapper {
+    display: flex;
+    max-width: $default-content-width;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: $color-grey-3;
+}
+
+body {
+    font-family: "Lexend", sans-serif;
+    font-style: normal;
+}
+
+.header__wrapper {
+    @extend %wrapper;
+    justify-content: space-between;
+    
+    .header__navigation {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 50%;
+        align-items: center;
+        ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $color-grey-3;
+                border-radius: 32px;
+                height: 46px;
+                width: 20%;
+                min-width: 90px;
+                a {
+                    height: 100%;
+                    line-height: 40px;
+                    text-align: center;
+                    flex: 1;
+                }
+            }
+        }
+        .header__signUp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            min-width: 90px;
+            height: 46px;
+            background-color: $color-orange;
+            border-radius: 32px;
+            color: $color-white;
+        }
+    }
+}
+
+.hero__wrapper {
+    @extend %wrapper;
+    display: flex;
+    .hero__info {
+        flex: 0.9;
+        .hero__title {
+            color: $color-headline;
+            font-family: 'Rubik';
+            font-size: 40px;
+            line-height: 55px;
+            /* or 138% */
+            text-transform: capitalize;
+            span {
+                color: transparent;
+                -webkit-text-stroke: 2px $color-headline;
+            }
+        }
+        .hero__description {
+            font-family: 'Lexend';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+            /* or 175% */
+            color: $color-neutral-01;
+            opacity: 0.75;
+            margin-top: 24px;
+        }
+        .search {
+            padding: 3px 3px 3px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 56px;
+            margin-top: 54px;
+            border: 1px solid $color-neutral-300;
+            border-radius: 32px;
+            .search__input {
+                height: 100%;
+                padding-left: 15px;
+                flex: 2;
+                border: unset;
+            }
+            .search__submit {
+                color: $color-white;
+                background-color: $color-orange;
+                border-radius: 32px;
+                border: unset;
+                height: 100%;
+                width: 110px;
+                font-family: 'Lexend';
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 22px;
+            }
+}
+        .partnership {
+            margin-top: 80px;
+            .partnership__title {
+                font-family: 'Lexend';
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 32px;
+                color: $color-neutral-500;
+            }
+            .partnership__icons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+    .hero__gallery {
+        flex: 1;
+    }
+}
